@@ -174,7 +174,7 @@ const TheologyModule = () => {
 
   return (
     <ScrollReveal>
-      <div className="min-h-screen bg-black text-foreground p-8">
+      <div className="min-h-screen bg-background text-foreground p-8">
         {/* Header */}
         <div className="max-w-6xl mx-auto mb-12">
           <div className="text-center mb-8">
@@ -195,39 +195,39 @@ const TheologyModule = () => {
           </div>
 
           {/* Metadata Card */}
-          <Card className="border-2 border-neon-magenta bg-black shadow-[0_0_20px_hsl(var(--neon-magenta)/0.3)] mb-8">
+          <Card className="border-2 border-neon-magenta bg-card shadow-[0_0_20px_hsl(var(--neon-magenta)/0.3)] mb-8">
             <CardHeader>
-              <CardTitle className="text-neon-magenta font-mono text-sm">
+              <CardTitle className="text-neon-magenta font-mono text-sm glow-magenta">
                 BRIDGE METADATA
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-xs font-mono">
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="border-neon-cyan text-neon-cyan">
+                <Badge variant="outline" className="border-neon-cyan text-neon-cyan bg-neon-cyan/10">
                   float_architecture
                 </Badge>
-                <Badge variant="outline" className="border-neon-purple text-neon-purple">
+                <Badge variant="outline" className="border-neon-purple text-neon-purple bg-neon-purple/10">
                   consciousness_technology
                 </Badge>
-                <Badge variant="outline" className="border-neon-orange text-neon-orange">
+                <Badge variant="outline" className="border-neon-orange text-neon-orange bg-neon-orange/10">
                   theological_framework
                 </Badge>
-                <Badge variant="outline" className="border-neon-lime text-neon-lime">
+                <Badge variant="outline" className="border-neon-lime text-neon-lime bg-neon-lime/10">
                   rent_due_mysticism
                 </Badge>
-                <Badge variant="outline" className="border-neon-magenta text-neon-magenta">
+                <Badge variant="outline" className="border-neon-magenta text-neon-magenta bg-neon-magenta/10">
                   the_void
                 </Badge>
               </div>
-              <div className="text-muted-foreground pt-4 space-y-1">
+              <div className="text-foreground pt-4 space-y-1 opacity-90">
                 <div>
-                  <span className="text-neon-cyan">created:</span> 2025-11-14 @ 03:21 PM
+                  <span className="text-neon-cyan font-semibold">created:</span> 2025-11-14 @ 03:21 PM
                 </div>
                 <div>
-                  <span className="text-neon-cyan">status:</span> active_operational_knowledge
+                  <span className="text-neon-cyan font-semibold">status:</span> active_operational_knowledge
                 </div>
                 <div>
-                  <span className="text-neon-cyan">significance:</span> foundational_theology
+                  <span className="text-neon-cyan font-semibold">significance:</span> foundational_theology
                 </div>
               </div>
             </CardContent>
@@ -248,7 +248,7 @@ const TheologyModule = () => {
               placeholder="Search theology... (try 'void', 'necromancy', 'rent due')"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-3 bg-black border-2 border-neon-cyan text-neon-cyan placeholder-neon-cyan/40 font-mono text-sm focus:outline-none focus:border-neon-magenta focus:shadow-[0_0_20px_hsl(var(--neon-magenta)/0.5)] transition-all"
+              className="w-full px-4 py-3 bg-background border-2 border-neon-cyan text-foreground placeholder-muted-foreground font-mono text-sm focus:outline-none focus:border-neon-magenta focus:shadow-[0_0_20px_hsl(var(--neon-magenta)/0.5)] transition-all"
             />
           </div>
         </div>
@@ -271,7 +271,7 @@ const TheologyModule = () => {
             return (
               <Card
                 key={section.id}
-                className={`border-2 bg-black shadow-[0_0_20px_hsl(var(--${section.color})/0.3)]`}
+                className={`border-2 bg-card shadow-[0_0_20px_hsl(var(--${section.color})/0.3)]`}
                 style={{ borderColor: `hsl(var(--${section.color}))` }}
               >
                 <CardHeader>
@@ -285,7 +285,7 @@ const TheologyModule = () => {
                     />
                     <div>
                       <div 
-                        className="text-xl"
+                        className="text-xl font-bold"
                         style={{ 
                           color: `hsl(var(--${section.color}))`,
                           textShadow: `0 0 10px hsl(var(--${section.color}) / 0.5)`
@@ -293,7 +293,7 @@ const TheologyModule = () => {
                       >
                         {section.title}
                       </div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-sm text-foreground opacity-80">
                         {section.subtitle}
                       </div>
                     </div>
@@ -301,7 +301,7 @@ const TheologyModule = () => {
                 </CardHeader>
                 <CardContent>
                   <p 
-                    className="mb-6 text-sm leading-relaxed"
+                    className="mb-6 text-base leading-relaxed font-medium"
                     style={{ color: `hsl(var(--${section.color}))` }}
                   >
                     {section.content.intro}
@@ -312,15 +312,15 @@ const TheologyModule = () => {
                       <AccordionItem 
                         key={idx} 
                         value={`${section.id}-${idx}`}
-                        className="border border-border/50"
+                        className="border-2 border-border bg-card/50"
                       >
                         <AccordionTrigger 
-                          className="px-4 hover:no-underline font-mono text-sm"
+                          className="px-4 hover:no-underline font-mono text-sm font-semibold"
                           style={{ color: `hsl(var(--${section.color}))` }}
                         >
                           {subsection.title}
                         </AccordionTrigger>
-                        <AccordionContent className="px-4 py-4 text-sm text-muted-foreground leading-relaxed">
+                        <AccordionContent className="px-4 py-4 text-sm text-foreground leading-relaxed bg-background/50">
                           {subsection.content}
                         </AccordionContent>
                       </AccordionItem>
@@ -332,9 +332,9 @@ const TheologyModule = () => {
           })}
 
           {/* Sacred Principles */}
-          <Card className="border-2 border-neon-lime bg-black shadow-[0_0_20px_hsl(var(--neon-lime)/0.3)]">
+          <Card className="border-2 border-neon-lime bg-card shadow-[0_0_20px_hsl(var(--neon-lime)/0.3)]">
             <CardHeader>
-              <CardTitle className="text-neon-lime font-mono glow-lime">
+              <CardTitle className="text-neon-lime font-mono glow-lime font-bold">
                 SACRED PHRASES [FLOAT_PRINCIPLES]
               </CardTitle>
             </CardHeader>
@@ -343,10 +343,10 @@ const TheologyModule = () => {
                 {principles.map((principle, idx) => (
                   <li 
                     key={idx}
-                    className="flex items-start gap-3 text-neon-lime/80 font-mono"
+                    className="flex items-start gap-3 text-foreground font-mono leading-relaxed"
                   >
-                    <span className="text-neon-cyan">∴</span>
-                    <span>{principle}</span>
+                    <span className="text-neon-cyan font-bold flex-shrink-0">∴</span>
+                    <span className="opacity-90">{principle}</span>
                   </li>
                 ))}
               </ul>
@@ -354,9 +354,9 @@ const TheologyModule = () => {
           </Card>
 
           {/* Grep Patterns */}
-          <Card className="border-2 border-neon-orange bg-black shadow-[0_0_20px_hsl(var(--neon-orange)/0.3)]">
+          <Card className="border-2 border-neon-orange bg-card shadow-[0_0_20px_hsl(var(--neon-orange)/0.3)]">
             <CardHeader>
-              <CardTitle className="text-neon-orange font-mono glow-orange">
+              <CardTitle className="text-neon-orange font-mono glow-orange font-bold">
                 GREP PATTERNS FOR DISCOVERY
               </CardTitle>
             </CardHeader>
@@ -365,7 +365,7 @@ const TheologyModule = () => {
                 {grepPatterns.map((pattern, idx) => (
                   <pre 
                     key={idx}
-                    className="text-xs font-mono text-neon-orange/80 bg-black/50 p-2 border border-neon-orange/30 overflow-x-auto"
+                    className="text-xs font-mono text-foreground bg-background p-3 border-2 border-neon-orange/50 overflow-x-auto rounded"
                   >
                     {pattern}
                   </pre>
@@ -375,37 +375,37 @@ const TheologyModule = () => {
           </Card>
 
           {/* Footer Synthesis */}
-          <Card className="border-2 border-neon-magenta bg-black shadow-[0_0_20px_hsl(var(--neon-magenta)/0.3)]">
+          <Card className="border-2 border-neon-magenta bg-card shadow-[0_0_20px_hsl(var(--neon-magenta)/0.3)]">
             <CardHeader>
-              <CardTitle className="text-neon-magenta font-mono glow-magenta">
+              <CardTitle className="text-neon-magenta font-mono glow-magenta font-bold">
                 SYNTHESIS: THE DEVOTIONAL INTERFACE
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <p className="text-neon-magenta/90">
+            <CardContent className="space-y-4 text-sm">
+              <p className="text-neon-magenta font-medium text-base leading-relaxed">
                 FLOAT's Core Function: Devotional Interface managing friction between The Void 
                 (unbounded creative potential) and Rent Due Mysticism (material limits).
               </p>
               
-              <div className="space-y-2 font-mono text-xs">
-                <div className="text-neon-cyan">HOLDING BOTH MODES</div>
-                <div className="pl-4 text-muted-foreground">
+              <div className="space-y-3 font-mono text-sm bg-background/50 p-4 rounded border-2 border-border">
+                <div className="text-neon-cyan font-bold text-base">HOLDING BOTH MODES</div>
+                <div className="pl-4 text-foreground leading-relaxed">
                   ├─ Sacred chaos AND material survival<br/>
                   ├─ Mysticism AND rent payment<br/>
                   ├─ No apology for either<br/>
                   └─ Feral duality maintained
                 </div>
 
-                <div className="text-neon-purple pt-2">MARGINS AS OPERATING SPACE</div>
-                <div className="pl-4 text-muted-foreground">
+                <div className="text-neon-purple font-bold text-base pt-2">MARGINS AS OPERATING SPACE</div>
+                <div className="pl-4 text-foreground leading-relaxed">
                   ├─ Beguines → BBS → Consciousness tech<br/>
                   ├─ Strategic transgression<br/>
                   ├─ Bottom epistemology<br/>
                   └─ Protection through opacity
                 </div>
 
-                <div className="text-neon-lime pt-2">PRESENT WITH THE TENSION</div>
-                <div className="pl-4 text-muted-foreground">
+                <div className="text-neon-lime font-bold text-base pt-2">PRESENT WITH THE TENSION</div>
+                <div className="pl-4 text-foreground leading-relaxed">
                   ├─ Trust the drift<br/>
                   ├─ Defer the scaffold<br/>
                   ├─ Topology preservation<br/>
@@ -413,11 +413,11 @@ const TheologyModule = () => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-border text-center text-neon-green">
-                <div className="text-lg mb-2">🌳 ∇ ✨</div>
-                <div className="text-xs">
-                  <span className="text-neon-cyan">Status:</span> Foundational theology documented and operational<br/>
-                  <span className="text-neon-purple">Success Metric:</span> When the oak tree laughs
+              <div className="pt-4 border-t-2 border-neon-green/50 text-center">
+                <div className="text-2xl mb-3">🌳 ∇ ✨</div>
+                <div className="text-sm font-mono space-y-1 text-foreground">
+                  <div><span className="text-neon-cyan font-bold">Status:</span> Foundational theology documented and operational</div>
+                  <div><span className="text-neon-purple font-bold">Success Metric:</span> When the oak tree laughs</div>
                 </div>
               </div>
             </CardContent>
