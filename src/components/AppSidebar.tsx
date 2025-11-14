@@ -1,4 +1,4 @@
-import { Brain, Eye, Moon, Zap, Database, Link2, Grid3x3 } from "lucide-react";
+import { Brain, Eye, Moon, Zap, Database, Link2, Grid3x3, BookOpen } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 
@@ -44,6 +44,12 @@ const modules = [
     url: "/sequencer", 
     icon: Grid3x3,
     color: "neon-magenta"
+  },
+  { 
+    title: "012: Theology", 
+    url: "/theology", 
+    icon: BookOpen,
+    color: "neon-purple"
   },
   { 
     title: "WK30: RefWeb", 
