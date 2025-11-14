@@ -1,7 +1,12 @@
 import { BodyRefusesModule } from "@/components/BodyRefusesModule";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const Index = () => {
-  return <BodyRefusesModule />;
+  return (
+    <ScrollReveal>
+      <BodyRefusesModule />
+    </ScrollReveal>
+  );
 };
 
 export default Index;
