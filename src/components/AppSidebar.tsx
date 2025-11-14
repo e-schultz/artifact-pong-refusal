@@ -1,4 +1,4 @@
-import { Brain, Eye, Moon, Zap, Database } from "lucide-react";
+import { Brain, Eye, Moon, Zap, Database, Link2 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 
@@ -38,6 +38,12 @@ const modules = [
     url: "/memory", 
     icon: Database,
     color: "neon-green"
+  },
+  { 
+    title: "WK30: RefWeb", 
+    url: "/references", 
+    icon: Link2,
+    color: "neon-magenta"
   },
 ];
 
