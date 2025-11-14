@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import AttentionModule from "./pages/AttentionModule";
 import SleepModule from "./pages/SleepModule";
 import MemoryModule from "./pages/MemoryModule";
+import SequencerModule from "./pages/SequencerModule";
 import ReferenceWeb from "./pages/ReferenceWeb";
 import NotFound from "./pages/NotFound";
 
@@ -37,6 +38,7 @@ const App = () => (
                   <Route path="/attention" element={<AttentionModule />} />
                   <Route path="/sleep" element={<SleepModule />} />
                   <Route path="/memory" element={<MemoryModule />} />
+                  <Route path="/sequencer" element={<SequencerModule />} />
                   <Route path="/references" element={<ReferenceWeb />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
