@@ -156,7 +156,7 @@ export function BodyRefusesModule() {
       <div
         className="fixed inset-0 pointer-events-none flex items-center justify-center z-0"
         style={{
-          opacity: 0.08 + Math.sin(scrollPos * 0.003) * 0.04,
+          opacity: 0.15 + Math.sin(scrollPos * 0.003) * 0.08,
         }}
       >
         <div className="space-y-12 text-6xl font-black tracking-[0.3em] text-muted">
